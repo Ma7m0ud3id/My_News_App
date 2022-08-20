@@ -4,6 +4,7 @@ import 'package:my_news/modules/home/home_screen.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:my_news/shared/styles/my_theme.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
+import 'package:search_page/search_page.dart';
 void main() {
   runApp( MyApp());
 }

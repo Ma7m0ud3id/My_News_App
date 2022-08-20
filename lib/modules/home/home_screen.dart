@@ -5,6 +5,7 @@ import 'package:my_news/shared/network/remote/Api_model.dart';
 import 'package:my_news/shared/styles/my_theme.dart';
 
 import '../../models/Sourse.dart';
+import 'my_search.dart';
 
 
 class HomeScreen extends StatelessWidget {
@@ -24,7 +25,10 @@ class HomeScreen extends StatelessWidget {
           //
           // }),
           actions: [
-          Icon(Icons.search,size: 30.0,)
+            IconButton(onPressed: (){
+              showSearch(context: context, delegate: Mysearchdlegate());
+            }, icon: const Icon(Icons.search,size: 30.0,))
+          
           ],
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
