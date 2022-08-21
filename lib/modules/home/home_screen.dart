@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:my_news/modules/home/List_app.dart';
+import 'package:my_news/modules/home/Settings/List_app.dart';
 import 'package:my_news/modules/home/tabscontroller.dart';
 import 'package:my_news/shared/network/remote/Api_model.dart';
 import 'package:my_news/shared/styles/my_theme.dart';
 
 import '../../models/Sourse.dart';
-import 'my_search.dart';
+import 'Search/my_search.dart';
 
 
 class HomeScreen extends StatelessWidget {

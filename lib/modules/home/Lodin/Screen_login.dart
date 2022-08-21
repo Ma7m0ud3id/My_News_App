@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_news/modules/home/home_screen.dart';
 
-import '../../shared/styles/my_theme.dart';
-import 'List_app.dart';
+import '../../../shared/styles/my_theme.dart';
+import '../Settings/List_app.dart';
 
 
 class Screenlogin extends StatelessWidget {
