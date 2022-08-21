@@ -38,6 +38,7 @@ dependencies:
   flutter_native_splash: ^2.2.7
   flutter_slider_drawer: ^2.1.1
   search_page: ^2.0.0+1
+  dropdown_button2: ^1.7.2
 
 dev_dependencies:
   flutter_test:

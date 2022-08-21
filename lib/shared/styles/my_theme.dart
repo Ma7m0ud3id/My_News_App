@@ -34,7 +34,7 @@ class MyThemeData {
       ),
       subtitle1: TextStyle(
         fontSize: 25,
-        color: Colors.black,
+        color: Colors.green,
         fontWeight: FontWeight.w500,
       ),
       bodyText1: TextStyle(
