@@ -12,6 +12,8 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'modules/home/Show_details.dart';
 void main() {
   runApp( ChangeNotifierProvider(
       create: (context){
@@ -53,6 +55,7 @@ class _MyAppState extends State<MyApp> {
       locale: Locale(provider.AppLanguage),
       debugShowCheckedModeBanner: false,
       routes: {
+        Detail.routName:(m)=>Detail(),
         HomeScreen.routeName:(c)=>HomeScreen(),
         Screenlogin.routName:(v)=>Screenlogin(),
       },
