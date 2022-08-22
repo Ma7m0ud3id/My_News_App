@@ -7,10 +7,10 @@ import 'package:http/http.dart'as http;
 class ApiModel {
 
 
-  static Future<MainSourse> getSources() async {
+  static Future<MainSourse> getSources(String categoriID) async {
     // call api
     var uri = Uri.https(
-        BASEURl, '/v2/top-headlines/sources', {"apikey": APIKEY});
+        BASEURl, '/v2/top-headlines/sources', {"apikey": APIKEY,'category':categoriID});
     var response = await http.get(uri);
     try {
       var bodyString = response.body;
@@ -21,10 +21,10 @@ class ApiModel {
       throw e;
     }
   }
-  static Future<NewsSourse> getArticles(Sources sources) async {
+  static Future<NewsSourse> getArticles(Sources sources,String search) async {
     // call api
     var uri = Uri.https(
-        BASEURl, '/v2/top-headlines/sources', {"apikey": APIKEY,"sources":sources.id});
+        BASEURl, '/v2/everything', {"apikey": APIKEY,"sources":sources.id, 'q':search,});
     var response = await http.get(uri);
     try {
       var bodyString = response.body;

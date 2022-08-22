@@ -1,18 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:my_news/modules/home/Lodin/Screen_login.dart';
 import 'package:my_news/modules/home/Settings/Setting.dart';
+import 'package:my_news/modules/home/home_screen.dart';
+import 'package:provider/provider.dart';
 
+import '../../../provid/my_provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class Listapp extends StatelessWidget {
 
 
   @override
   Widget build(BuildContext context) {
+    var pro=Provider.of<MyProviderApp>(context);
     return Drawer(
       child: Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(100.0),
           child: AppBar(
             centerTitle: true,
-            title: Text('News App!',style: Theme.of(context).textTheme.headline1,),
+            title: Text(AppLocalizations.of(context)!.newsapp,style: Theme.of(context).textTheme.headline1,),
           ),
 
         ),
@@ -24,7 +31,12 @@ class Listapp extends StatelessWidget {
             ),
             InkWell(
               onTap: (){
-
+                Navigator.push(//هاااااااااااااااااااااااااااااااااااااااااااااااااااااام
+                  context,
+                  new MaterialPageRoute(
+                    builder: (context) => new Screenlogin(),
+                  ),
+                );
               },
               child: Row(
                 children: [
@@ -32,7 +44,7 @@ class Listapp extends StatelessWidget {
                   SizedBox(
                     width: 5,
                   ),
-                  Text('Categories',style: Theme.of(context).textTheme.headline2,)
+                  Text(AppLocalizations.of(context)!.categories,style: Theme.of(context).textTheme.headline2,)
                 ],
               ),
             ),
@@ -56,7 +68,7 @@ class Listapp extends StatelessWidget {
                   SizedBox(
                     width: 5,
                   ),
-                  Text('Settings',style: Theme.of(context).textTheme.headline2,)
+                  Text(AppLocalizations.of(context)!.setting,style: Theme.of(context).textTheme.headline2,)
                 ],
               ),
             )

@@ -28,6 +28,11 @@ class MyThemeData {
         fontWeight: FontWeight.bold,//text Add New Task
       ),
       headline3: TextStyle(
+        fontSize: 15,
+        color: Colors.grey,//text of badg of Add New Task__feild text
+        fontWeight: FontWeight.w400,
+      ),
+      headline4: TextStyle(
         fontSize: 25,
         color: Colors.grey,//text of badg of Add New Task__feild text
         fontWeight: FontWeight.w400,
@@ -77,7 +82,7 @@ class MyThemeData {
       ),
       bodyText1: TextStyle(
         fontSize: 15,
-        color: WhiteColor,
+        color: Colors.black,
         fontWeight: FontWeight.w500,// task titel
       ),
     ),
