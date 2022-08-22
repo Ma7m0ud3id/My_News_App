@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../../../provid/my_provider.dart';
 import '../../../shared/styles/my_theme.dart';
 import 'List_app.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
@@ -19,6 +21,7 @@ class _SettingsState extends State<Settings> {
   String? selectedValue;
   @override
   Widget build(BuildContext context) {
+    var pro=Provider.of<MyProviderApp>(context);
     return Scaffold(
       drawer: Listapp(),
       appBar: PreferredSize(
@@ -99,11 +102,15 @@ class _SettingsState extends State<Settings> {
                     ))
                         .toList(),
                     value: selectedValue,
+
                     onChanged: (value) {
                       setState(() {
                         selectedValue = value as String;
                       });
+                      print(selectedValue);
+                      selectedValue=='English'?pro.changeLanguage('en'):pro.changeLanguage('ar');
                     },
+
                     icon: const Icon(
                       Icons.arrow_downward,
                     ),

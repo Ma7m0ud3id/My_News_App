@@ -8,11 +8,18 @@ import '../../models/Sourse.dart';
 import 'Search/my_search.dart';
 
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
 
   static const String routeName='home';
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    var ID= ModalRoute.of(context)?. settings.arguments as String;
     return Scaffold(
       drawer: Listapp(),
       appBar: PreferredSize(
@@ -24,11 +31,12 @@ class HomeScreen extends StatelessWidget {
           // leading: InkWell(child: Icon(Icons.list,size:45.0),onTap: (){
           //
           // }),
+
           actions: [
             IconButton(onPressed: (){
               showSearch(context: context, delegate: Mysearchdlegate());
             }, icon: const Icon(Icons.search,size: 30.0,))
-          
+
           ],
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
@@ -39,7 +47,7 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Container(
         child: FutureBuilder<MainSourse>(
-          future: ApiModel.getSources() ,
+          future: ApiModel.getSources(ID) ,
           builder: (c,snapShot){
 
             if(snapShot.connectionState == ConnectionState.waiting){

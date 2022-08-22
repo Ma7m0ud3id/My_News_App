@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../../../provid/my_provider.dart';
+import '../news.dart';
 
 class Mysearchdlegate extends SearchDelegate{
+  static String? q ;
   List<String>resultSearch=[
-    'sport',
-    'politics',
-    'health',
-    'environment',
-    'bussines',
+    '',
+    '',
+    '',
+    '',
+    '',
+    '',
+    ''
   ];
   @override
   List<Widget>? buildActions(BuildContext context) {
+    var provider=Provider.of<MyProviderApp>(context);
     // TODO: implement buildActions
     return [
     IconButton(onPressed: (){
@@ -32,17 +40,27 @@ class Mysearchdlegate extends SearchDelegate{
 
   @override
   Widget buildResults(BuildContext context) {
+    var provider=Provider.of<MyProviderApp>(context);
     // TODO: implement buildResults
-    return Center(
-      child: Text(
-        query,
-        style: Theme.of(context).textTheme.subtitle1,
-      ),
+    return ListTile(
+      title: Text(query),
+      onTap: (){
+        provider.search(query);
+        Navigator.pop(context);
+
+      },
     );
+    //   Center(
+    //   child: Text(
+    //     query,
+    //     style: Theme.of(context).textTheme.subtitle1,
+    //   ),
+    // );
   }
 
   @override
   Widget buildSuggestions(BuildContext context) {
+    var provider=Provider.of<MyProviderApp>(context);
     // TODO: implement buildSuggestions
     List<String>suggest=resultSearch.where((resultSearch) {
       final result=resultSearch.toLowerCase();
@@ -54,14 +72,21 @@ class Mysearchdlegate extends SearchDelegate{
         itemBuilder: (context,index)
     {
       final Suggest =suggest[index];
+
       return ListTile(
         title: Text(Suggest),
         onTap: (){
           query=Suggest;
+          provider.search(query);
+          Navigator.pop(context);
+
         },
       );
-    }
+
+    },
+
     );
   }
+
 
 }
