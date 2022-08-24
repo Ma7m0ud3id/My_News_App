@@ -53,7 +53,7 @@ class Screenlogin extends StatelessWidget {
                   padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
                       color: Color(0xFFC91C22),
-                    borderRadius: BorderRadius.horizontal(left:Radius.circular(25) )
+                    borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25),topLeft: Radius.circular(25),topRight: Radius.circular(25)) ,
                   ),
                   child: Column(
                     children: [
@@ -76,7 +76,7 @@ class Screenlogin extends StatelessWidget {
                   padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
                       color: Color(0xFF003E90),
-                      borderRadius: BorderRadius.horizontal(right:Radius.circular(25) )
+                      borderRadius:  BorderRadius.only(bottomRight: Radius.circular(25),topLeft: Radius.circular(25),topRight: Radius.circular(25)) ,
                   ),
                   child: Column(
                     children: [
@@ -105,7 +105,7 @@ class Screenlogin extends StatelessWidget {
                   padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
                       color: Color(0xFFED1E79),
-                      borderRadius: BorderRadius.horizontal(left:Radius.circular(25) )
+                      borderRadius:  BorderRadius.only(bottomLeft: Radius.circular(25),topLeft: Radius.circular(25),topRight: Radius.circular(25)) ,
                   ),
                   child: Column(
                     children: [
@@ -127,7 +127,7 @@ class Screenlogin extends StatelessWidget {
                   padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
                       color: Color(0xFFCF7E48),
-                      borderRadius: BorderRadius.horizontal(right:Radius.circular(25) )
+                      borderRadius:  BorderRadius.only(bottomRight: Radius.circular(25),topLeft: Radius.circular(25),topRight: Radius.circular(25)) ,
                   ),
                   child: Column(
                     children: [
@@ -156,7 +156,7 @@ class Screenlogin extends StatelessWidget {
                   padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
                       color: Color(0xFF4882CF),
-                      borderRadius: BorderRadius.horizontal(left:Radius.circular(25) )
+                      borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25),topLeft: Radius.circular(25),topRight: Radius.circular(25)) ,
                   ),
                   child: Column(
                     children: [
@@ -178,7 +178,7 @@ class Screenlogin extends StatelessWidget {
                   padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
                       color: Color(0xFFF2D352),
-                      borderRadius: BorderRadius.horizontal(right:Radius.circular(25) )
+                      borderRadius:  BorderRadius.only(bottomRight: Radius.circular(25),topLeft: Radius.circular(25),topRight: Radius.circular(25)) ,
                   ),
                   child: Column(
                     children: [
