@@ -21,6 +21,8 @@ class _NewsDataState extends State<NewsData> {
   @override
   Widget build(BuildContext context) {
     var pro=Provider.of<MyProviderApp>(context);
+    // print ('value${widget.newsSource.id}');
+    // print (pro.Q);
     return  FutureBuilder<NewsSourse>(
         future: ApiModel.getArticles(widget.newsSource,pro.Q),
         builder: (_,snapShot){
@@ -45,8 +47,8 @@ class _NewsDataState extends State<NewsData> {
           }
 
           var newsList=snapShot.data?.articles ?? [];
-          print('edit');
-          print(newsList[0]);
+          // print('edit');
+          // print(newsList[0]);
           return ListView.builder(
               itemCount: newsList.length,
               itemBuilder:(c,index){
